@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">RiskTrix analytics dashboard illustration</title>
+  <desc id="desc">A stylised dashboard with risk heat map, charts, and bordered cards in the RiskTrix brand colours.</desc>
+  <rect width="960" height="640" rx="40" fill="#e2e3e4"/>
+  <rect x="42" y="42" width="876" height="556" rx="34" fill="#ffffff" stroke="#444444" stroke-width="4"/>
+  <rect x="84" y="92" width="310" height="176" rx="24" fill="#ffffff" stroke="#444444" stroke-width="3"/>
+  <rect x="428" y="92" width="448" height="176" rx="24" fill="#ffffff" stroke="#444444" stroke-width="3"/>
+  <rect x="84" y="302" width="792" height="254" rx="26" fill="#ffffff" stroke="#444444" stroke-width="3"/>
+  <rect x="116" y="128" width="88" height="88" rx="18" fill="#820808"/>
+  <path d="M148 185l20-32 18 20 22-40" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <text x="226" y="148" font-family="Georgia, serif" font-size="20" fill="#000000">Risk Matrix Viz</text>
+  <text x="226" y="188" font-family="Georgia, serif" font-size="20" fill="#444444"></text>
+  <g transform="translate(458 122)">
+    <rect width="72" height="102" rx="16" fill="#820808"/>
+    <rect x="96" y="30" width="72" height="72" rx="16" fill="#088282"/>
+    <rect x="192" y="12" width="72" height="120" rx="16" fill="#e2e3e4"/>
+    <rect x="288" y="54" width="72" height="56" rx="16" fill="#444444"/>
+  </g>
+  <g transform="translate(120 340)">
+    <rect width="240" height="180" rx="22" fill="#ffffff" stroke="#820808" stroke-width="3"/>
+    <line x1="40" y1="130" x2="200" y2="40" stroke="#088282" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="40" cy="130" r="10" fill="#820808"/>
+    <circle cx="92" cy="112" r="10" fill="#820808"/>
+    <circle cx="146" cy="86" r="10" fill="#820808"/>
+    <circle cx="200" cy="40" r="10" fill="#820808"/>
+  </g>
+  <g transform="translate(390 340)">
+    <rect width="450" height="180" rx="22" fill="#ffffff" stroke="#444444" stroke-width="3"/>
+    <rect x="38" y="34" width="118" height="48" rx="14" fill="#820808"/>
+    <rect x="176" y="34" width="118" height="48" rx="14" fill="#088282"/>
+    <rect x="314" y="34" width="98" height="48" rx="14" fill="#e2e3e4"/>
+    <text x="42" y="122" font-family="Georgia, serif" font-size="26" fill="#000000">ProfitBase</text>
+    <text x="42" y="154" font-family="Georgia, serif" font-size="20" fill="#444444">Financial reporting with clarity and control</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+{
+  "brandName": "RiskTrix",
+  "tagline": "Visualising complex dynamics with accessible reporting design",
+  "palette": {
+    "deepRed": "#820808",
+    "black": "#000000",
+    "white": "#ffffff",
+    "lightGrey": "#e2e3e4",
+    "plainGrey": "#444444",
+    "teal": "#088282"
+  },
+  "typography": {
+    "heading": "Georgia, Times New Roman, serif",
+    "body": "Georgia, Times New Roman, serif"
+  },
+  "logo": {
+    "file": "img/Transparent RiskTrix Horizontal Logo.png",
+    "background": "transparent",
+    "border": {
+      "color": "none",
+      "width": "0",
+      "radius": "0",
+      "style": "none"
+    }
+  },
+  "borders": {
+    "card": "1px solid #444444",
+    "feature": "1px solid #444444",
+    "radiusLarge": "28px",
+    "radiusMedium": "18px"
+  },
+  "accessibility": {
+    "skipLink": true,
+    "focusOutline": "#088282",
+    "landmarks": ["header", "nav", "main", "footer"],
+    "minimumContrastIntent": "AA-oriented palette usage"
+  },
+  "images": {
+    "directory": "img",
+    "presentationSizes": [
+      {"token": "size-small", "maxWidth": "220px"},
+      {"token": "size-medium", "maxWidth": "360px"},
+      {"token": "size-large", "maxWidth": "100%"}
+    ],
+    "targetNote": "Use only the RiskTrix FINAL palette for page and image styling."
+  },
+  "references": [
+    "risk_trix_FINAL.html",
+    "ProfitBase",
+    "LeapLytics",
+    "DataLoom Risk Matrix Viz",
+    "Lorem ipsum example text"
+  ]
+}
