@@ -28,6 +28,7 @@ body {
     color: var(--plain-grey);
     background: var(--light-grey);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 img {
@@ -568,6 +569,7 @@ a:focus-visible {
 .detail-list li {
     padding-bottom: 0.9rem;
     border-bottom: 1px solid var(--plain-grey);
+    overflow-wrap: anywhere;
 }
 
 .detail-list strong {
@@ -624,6 +626,7 @@ a:focus-visible {
 .footer-top a {
     color: var(--white);
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
 .footer-top a:hover,
@@ -669,7 +672,27 @@ a:focus-visible {
     .nav,
     .nav-actions {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .nav {
+        padding: 0.9rem 0 1.1rem;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .nav-list {
+        justify-content: center;
+    }
+
+    .hero-arc-inner {
+        padding: 2.5rem 0;
+    }
+
+    .story-visual img {
+        margin: 0 auto;
     }
 }
 
@@ -699,8 +722,158 @@ a:focus-visible {
         height: 68px;
     }
 
+    .site-header {
+        position: static;
+    }
+
+    .nav {
+        gap: 0.85rem;
+    }
+
+    .nav-actions {
+        gap: 0.85rem;
+    }
+
+    .nav-list {
+        width: 100%;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .nav-list li {
+        flex: 1 1 calc(33.333% - 0.5rem);
+        min-width: 88px;
+    }
+
+    .nav-list a {
+        width: 100%;
+        padding: 0.7rem 0.8rem;
+        text-align: center;
+    }
+
+    .brand-mark {
+        max-width: 200px;
+        height: 48px;
+    }
+
+    .hero-arc::after {
+        width: 220px;
+        height: 220px;
+        right: -110px;
+        top: -40px;
+    }
+
+    .hero-arc-inner {
+        padding: 2rem 0 2.25rem;
+    }
+
+    .cover-copy h1,
+    .page-banner h1,
+    .legal-panel h1,
+    .contact-wide h1 {
+        margin-bottom: 0.85rem;
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+        line-height: 1.08;
+    }
+
+    .hero-intro,
+    .page-banner p,
+    .legal-panel p,
+    .content-panel p,
+    .story-copy p,
+    .detail-list li {
+        font-size: 0.98rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .story-panel {
+        padding: 2.25rem 0;
+    }
+
+    .story-layout,
+    .split-layout {
+        gap: 1.35rem;
+    }
+
+    .split-layout,
+    .register-panel,
+    .page-banner,
+    .legal-panel,
+    .contact-wide {
+        padding-top: 2rem;
+    }
+
+    .legal-panel h2,
+    .content-panel h2,
+    .story-copy h2 {
+        font-size: 1.45rem;
+        line-height: 1.2;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        font-size: 1rem;
+    }
+
     .brand-copy span {
         display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav,
+    .footer-inner,
+    .hero-arc-inner,
+    .story-layout,
+    .features-inner,
+    .split-layout,
+    .register-panel,
+    .page-banner,
+    .legal-panel,
+    .contact-wide {
+        width: min(calc(100% - 1.25rem), var(--site-width));
+    }
+
+    .brand-mark {
+        max-width: 180px;
+        height: 42px;
+    }
+
+    .nav-list li {
+        flex: 1 1 100%;
+    }
+
+    .eyebrow {
+        font-size: 0.82rem;
+    }
+
+    .cover-copy h1,
+    .page-banner h1,
+    .legal-panel h1,
+    .contact-wide h1 {
+        font-size: clamp(2rem, 11vw, 2.7rem);
+    }
+
+    .hero-intro,
+    .page-banner p,
+    .legal-panel p,
+    .content-panel p,
+    .story-copy p,
+    .detail-list li {
+        font-size: 0.95rem;
+    }
+
+    .footer-top {
+        gap: 0.75rem;
+        padding-bottom: 1.5rem;
     }
 }
 
