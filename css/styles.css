@@ -98,7 +98,6 @@ a:focus-visible {
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.85rem;
     color: var(--black);
     text-decoration: none;
 }
@@ -108,19 +107,6 @@ a:focus-visible {
     max-width: 240px;
     height: 56px;
     object-fit: contain;
-}
-
-.brand-copy strong {
-    display: block;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--black);
-}
-
-.brand-copy span {
-    display: block;
-    font-size: 0.82rem;
-    color: var(--plain-grey);
 }
 
 .eyebrow {
@@ -175,12 +161,14 @@ a:focus-visible {
     padding: 0 0 4rem;
 }
 
+.page-hero,
 .hero-arc {
     position: relative;
     overflow: hidden;
     background: radial-gradient(120% 120% at 70% 10%, #e2e3e4 0%, #820808 35%, #820808 70%, #820808 100%);
 }
 
+.page-hero::after,
 .hero-arc::after {
     content: "";
     position: absolute;
@@ -189,9 +177,10 @@ a:focus-visible {
     width: 340px;
     height: 340px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffffff, #e2e3e4);
+    background: var(--light-grey);
 }
 
+.page-hero-inner,
 .hero-arc-inner,
 .story-layout,
 .features-inner,
@@ -215,12 +204,19 @@ a:focus-visible {
     padding: 3rem 0;
 }
 
+.page-hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0;
+}
+
 .hero-simple {
     grid-template-columns: 1fr;
 }
 
 .cover-copy h1,
 .page-banner h1,
+.legal-hero h1,
 .legal-panel h1,
 .contact-wide h1 {
     margin: 0 0 1rem;
@@ -230,6 +226,7 @@ a:focus-visible {
 }
 
 .page-banner h1,
+.legal-hero h1,
 .legal-panel h1,
 .contact-wide h1,
 .content-panel h2,
@@ -251,6 +248,12 @@ a:focus-visible {
     max-width: 58ch;
     margin: 0;
     font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.page-banner p:last-child,
+.legal-hero p {
+    max-width: 70ch;
     color: rgba(255, 255, 255, 0.92);
 }
 
@@ -547,6 +550,7 @@ a:focus-visible {
 .split-layout,
 .register-panel,
 .page-banner,
+.legal-hero,
 .legal-panel,
 .contact-wide {
     padding-top: 2.5rem;
@@ -663,6 +667,7 @@ a:focus-visible {
 
 @media (max-width: 900px) {
     .hero-arc-inner,
+    .page-hero-inner,
     .story-layout,
     .features-grid,
     .split-layout {
@@ -691,6 +696,10 @@ a:focus-visible {
         padding: 2.5rem 0;
     }
 
+    .page-hero-inner {
+        padding: 2.5rem 0;
+    }
+
     .story-visual img {
         margin: 0 auto;
     }
@@ -702,6 +711,7 @@ a:focus-visible {
 
 @media (max-width: 620px) {
     .hero-arc-inner,
+    .page-hero-inner,
     .story-layout,
     .features-inner,
     .split-layout,
@@ -767,8 +777,13 @@ a:focus-visible {
         padding: 2rem 0 2.25rem;
     }
 
+    .page-hero-inner {
+        padding: 2rem 0 2.25rem;
+    }
+
     .cover-copy h1,
     .page-banner h1,
+    .legal-hero h1,
     .legal-panel h1,
     .contact-wide h1 {
         margin-bottom: 0.85rem;
@@ -778,6 +793,7 @@ a:focus-visible {
 
     .hero-intro,
     .page-banner p,
+    .legal-hero p,
     .legal-panel p,
     .content-panel p,
     .story-copy p,
@@ -806,6 +822,7 @@ a:focus-visible {
     .split-layout,
     .register-panel,
     .page-banner,
+    .legal-hero,
     .legal-panel,
     .contact-wide {
         padding-top: 2rem;
@@ -822,16 +839,13 @@ a:focus-visible {
     .footer-bottom {
         font-size: 1rem;
     }
-
-    .brand-copy span {
-        display: none;
-    }
 }
 
 @media (max-width: 420px) {
     .nav,
     .footer-inner,
     .hero-arc-inner,
+    .page-hero-inner,
     .story-layout,
     .features-inner,
     .split-layout,
@@ -857,6 +871,7 @@ a:focus-visible {
 
     .cover-copy h1,
     .page-banner h1,
+    .legal-hero h1,
     .legal-panel h1,
     .contact-wide h1 {
         font-size: clamp(2rem, 11vw, 2.7rem);
@@ -864,6 +879,7 @@ a:focus-visible {
 
     .hero-intro,
     .page-banner p,
+    .legal-hero p,
     .legal-panel p,
     .content-panel p,
     .story-copy p,
