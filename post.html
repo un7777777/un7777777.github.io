@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About RiskTrix, a focused risk heatmap tool for clear reporting and stakeholder communication.">
+  <title>Journal | RiskTrix</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .post-entry {
+        margin-bottom: 4rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .post-meta {
+        font-size: 0.9rem;
+        color: var(--plain-grey);
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .post-entry h2 {
+        font-size: 2.2rem;
+        margin: 0.5rem 0 1rem;
+        line-height: 1.2;
+        color: var(--black);
+    }
+
+    .post-entry p {
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease;
+        backdrop-filter: blur(3px);
+    }
+
+    .drawer-overlay.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .article-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 650px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+
+
+        transform: translateX(100%);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        overflow-y: auto;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .article-drawer.is-active {
+        transform: translateX(0);
+    }
+
+
+    .drawer-close-btn {
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: none;
+        border: none;
+        color: var(--teal);
+        font-family: var(--ff-primary, sans-serif);
+        font-weight: 700;
+        cursor: pointer;
+        margin-bottom: 40px;
+        padding: 0;
+        font-size: 1rem;
+        transition: gap 0.2s ease;
+    }
+
+    .drawer-close-btn:hover {
+        gap: 15px;
+    }
+
+    #drawer-content h1 {
+        font-size: 2.6rem;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        color: var(--black);
+    }
+
+    #drawer-content .eyebrow {
+        color: var(--teal);
+        margin-bottom: 10px;
+    }
+
+    #drawer-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin: 20px 0;
+    }
+
+    #drawer-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="index.html" aria-label="RiskTrix home">
+      <img class="brand-mark" src="img/Transparent RiskTrix Horizontal Logo.png" alt="RiskTrix logo">
+    </a>
+    <div class="nav-actions">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="post.html" aria-current="page">Posts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="main-shell" tabindex="-1">
+  <section class="page-hero" aria-labelledby="posts-title">
+    <div class="page-hero-inner page-banner">
+      <p class="eyebrow eyebrow-light">Updates</p>
+      <h1 id="posts-title">Project Journal</h1>
+      <p>Following our daily journey at the HIVE, meet our team members, and explore our latest progress announcements alongside educational insights into organisational risk management.</p>
+    </div>
+  </section>
+
+  <section class="story-panel">
+    <div class="story-layout" style="display: block; max-width: 850px; margin: 0 auto;">
+
+      <article class="post-entry">
+        <p class="post-meta">Updated on 27 April 2026 / RiskTrix Team</p>
+        <h2>The Logic of Categorisation: Structured Risk Assessment</h2>
+        <p>In a complex organisational environment, relying on intuition to assess safety is rarely sufficient. Our latest methodology focus explores how the risk matrix serves as a vital tool for standardising how we perceive threats through a structured, data-driven approach...</p>
+        <button class="button secondary-button" onclick="openDrawer('article-1')" style="color: var(--teal); border-color: var(--teal);">READ MORE</button>
+      </article>
+
+      <article class="post-entry">
+        <p class="post-meta">Updated on 25 April 2026 / RiskTrix Team</p>
+        <h2>Defining the Red Zone: Understanding Risk Appetite</h2>
+        <p>A risk matrix is not a universal template; it is a reflection of an organisation’s specific values and risk appetite. In this deep-dive, we explore how identifying critical thresholds ensures safety protocols are proportionate and effective...</p>
+        <button class="button secondary-button" onclick="openDrawer('article-2')" style="color: var(--teal); border-color: var(--teal);">READ MORE</button>
+      </article>
+
+      <article class="post-entry">
+        <p class="post-meta">Updated on 23 April 2026 / RiskTrix Team</p>
+        <h2>The Dynamic Journey: From Initial to Residual Risk</h2>
+        <p>Risk management is an ongoing process of transformation rather than a one-off assessment. We examine the transition from Initial Risk to Residual Risk and how targeted mitigation strategies drive continuous improvement...</p>
+        <button class="button secondary-button" onclick="openDrawer('article-3')" style="color: var(--teal); border-color: var(--teal);">READ MORE</button>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="article-drawer" id="article-drawer" role="dialog" aria-modal="true">
+  <button class="drawer-close-btn" onclick="closeDrawer()" aria-label="Back to journal">
+    <span>&larr;</span> BACK TO JOURNAL
+  </button>
+  <div id="drawer-content">
+  </div>
+</div>
+
+
+
+<script>
+  function openDrawer(articleId) {
+      const drawer = document.getElementById('article-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const content = document.getElementById('drawer-content');
+
+      // British English
+      const articles = {
+          'article-1': `
+              <p class="eyebrow">Methodology</p>
+              <h1>The Logic of Categorisation: Structured Risk Assessment</h1>
+              <p>In a complex organisational environment, relying on intuition to assess safety is rarely sufficient. The risk matrix serves as a vital tool for standardising how we perceive threats. By categorising risks into defined cells based on their nature, we can move away from subjective guesswork towards a structured, data-driven approach.</p>
+              <p>This method allows decision-makers to visualise the entire risk landscape at a glance, ensuring that resources are allocated to the areas where they are most needed.</p>
+          `,
+          'article-2': `
+              <p class="eyebrow">Strategic Planning</p>
+              <h1>Defining the Red Zone: Understanding Risk Appetite</h1>
+              <p>A risk matrix is not a universal template; it is a reflection of an organisation’s specific values and risk appetite. The "Red Zone"—representing critical risks that require immediate intervention—varies depending on an entity's tolerance levels.</p>
+              <p>Defining these thresholds is a fundamental step in strategic planning. By clearly visualising where the line is drawn between acceptable and unacceptable risks, leadership teams can ensure that safety protocols are both proportionate and effective in protecting their core assets.</p>
+          `,
+          'article-3': `
+              <p class="eyebrow">Process Improvement</p>
+              <h1>The Dynamic Journey: From Initial to Residual Risk</h1>
+              <p>Risk management is an ongoing process of transformation rather than a one-off assessment. We begin by identifying the "Initial Risk"—the level of threat present before any safeguards are implemented.</p>
+              <p>Our objective is to apply targeted mitigation strategies to move these risks across the matrix, reducing their likelihood or consequence. The final position on the matrix is known as "Residual Risk". Monitoring this movement is essential for evaluating the success of our safety measures.</p>
+          `
+      };
+
+
+      content.innerHTML = articles[articleId] || '<h1>Content not found.</h1>';
+
+
+      overlay.classList.add('is-active');
+      drawer.classList.add('is-active');
+
+
+      document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+      const drawer = document.getElementById('article-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+
+
+      drawer.classList.remove('is-active');
+      overlay.classList.remove('is-active');
+
+
+      document.body.style.overflow = '';
+  }
+</script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <p><a href="mailto:risktrixau@gmail.com">risktrixau@gmail.com</a></p>
+      <p><a href="https://www.instagram.com/risktrix?igsh=MTl5bHV0bXYxbXhoYg%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a></p>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms &amp; Conditions</a></p>
+    </div>
+    <div class="footer-divider" aria-hidden="true"></div>
+    <p class="footer-bottom">Copyright &copy; 2026 RiskTrix. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
